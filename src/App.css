@@ -284,6 +284,13 @@ footer * {
     color: white;
 }
 
+/*booking form css*/
+#booking-form {
+    display: grid;
+    max-width: 200px;
+    gap: 20px;
+}
+
 @media screen and (min-width: 1330px) {
     #about {
         padding: 100px 300px;
