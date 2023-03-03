@@ -1,81 +1,314 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&family=Markazi+Text:wght@400;600&display=swap');
+
+/* setup stuff */
+body {
+    margin: 0px;
+    font-family: karla;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+    border: none;
+    border-radius: 16px;
+    padding: 15px 25px;
+    background-color: #F4CE14;
+    color: black;
+    font-size: 12pt;
+    font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#logo {
+    height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* classes for style guide */
+.markazi {
+    font-family: 'markazi';
+    font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+    font-size: 64pt;
 }
 
+.subtitle {
+    font-size: 40pt;
+}
+
+.section-title {
+    font-size: 20pt;
+}
+
+.text {
+    font-size: 18pt;
+    color: #495E57
+}
+
+.green {
+    background-color: #495E57;
+}
+
+.yellow {
+    background-color: #F4CE14;
+}
+
+/* header css */
 header {
-  padding: 0px 300px;
-  display: flex;
+    display: flex;
+    align-items: center;
+    padding: 20px 100px;
+    gap: 20px;
 }
 
-nav {
-  flex: 1;
+#navbar {
+    flex: 1;
+    list-style: none;
+    padding-inline-start: 0px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-nav ul {
-  list-style: none;
-  padding-inline-start: 0px;
-
-  display: flex;
-  justify-content: space-evenly;
+#navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
 }
 
-main {
-  padding: 0px 200px;
+/* hero section css */
+#hero {
+    height: 350px;
+    display: flex;
+    padding: 0px 100px;
+    gap: 100px;
+    color: white;
 }
 
+#hero h1, #hero h3 {
+    height: min-content;
+    font-family: 'Markazi text';
+    font-weight: 300;
+    margin: 0px;
+}
+
+#hero h1 {
+    font-size: 64pt;
+    color: #d7b611;
+}
+
+#hero h3 {
+    font-size: 40pt;
+}
+
+#hero div {
+    width: 100%;
+    flex: 1;
+}
+
+#hero img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* specials section css */
 #specials {
-  display: flex;
-  padding: 0px 100px;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 100px;
+    gap: 30px;
 }
 
-.specials-div {
-  display: flex;
-  text-align: center;
-  justify-content: center;
+#specials-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.specials-card {
-  flex: 1;
+#specials-inner {
+    display: flex;
+    gap: 20px;
 }
 
-.specials-card img {
-  max-width: 100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.specials-item {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16x;
+    padding: 0px 0px 40px;
+    background-color: #EDEFEE;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.specials-item div {
+    padding: 0px 10px;
+}
+
+.specials-item img {
+    max-width: 100%;
+    height: calc((100vw - 640px) / 3);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+}
+
+.specials-text {
+    padding: 0px 20px;
+}
+
+.specials-text p {
+    color: #495E57;
+}
+
+.title-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price {
+    color: orange;
+}
+
+/* testimonials section css */
+#testimonials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#testimonials h2 {
+    color: #495E57
+}
+
+#testi-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0px 100px;
+}
+
+.testi-item {
+    width: 100%;
+    height: calc((100vw - 660px) / 4);
+    text-align: left;
+    background-color: white;
+    padding: 20px 10px 0px;
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.testi-item * {
+    flex: 1;
+    padding: 0px;
+}
+
+.testi-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.testi-img-div {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+}
+
+.testi-inner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* about section css */
+#about {
+    display: flex;
+    gap: 20px;
+    padding: 0px 100px;
+}
+
+#about * {
+    flex: 1;
+}
+
+#about-text h1 {
+    margin: 0px;
+}
+
+.about-img {
+    width: 13vw;
+    height: 19vw;
+    position: relative;
+    object-fit: cover;
+}
+
+#about-img-1 {
+    top: 5vw;
+}
+
+#about-img-2 {
+    right: 5vw;
+}
+
+/*footer css*/
+footer {
+    display: flex;
+    gap: 20px;
+    padding: 0px 100px;
+    background-color: #333333;
+    color: white;
+}
+
+footer * {
+    flex: 1;
+}
+
+#footer-logo {
+    width: 100%;
+}
+
+.footer-list ul {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.footer-list ul a {
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (min-width: 1330px) {
+    #about {
+        padding: 100px 300px;
+        gap: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        padding: 20px 300px;
+    }
+
+    #hero {
+        padding: 50px 300px;
+    }
+
+    #specials {
+        padding: 100px 300px;
+    }
+
+    #testimonials {
+        padding: 100px 200px 200px;
+    }
+
+    footer {
+        padding: 100px 300px;
+    }
 }
