@@ -28,6 +28,49 @@
   color: #61dafb;
 }
 
+header {
+  padding: 0px 300px;
+  display: flex;
+}
+
+nav {
+  flex: 1;
+}
+
+nav ul {
+  list-style: none;
+  padding-inline-start: 0px;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+main {
+  padding: 0px 200px;
+}
+
+#specials {
+  display: flex;
+  padding: 0px 100px;
+  gap: 10px;
+}
+
+.specials-div {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.specials-card {
+  flex: 1;
+}
+
+.specials-card img {
+  max-width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
