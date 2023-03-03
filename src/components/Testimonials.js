@@ -12,7 +12,7 @@ function Testimonials() {
                         </b>
                         <div class="testi-inner">
                             <div class="testi-img-div">  
-                                <img src="/src/components/assets/bruchetta.svg" />
+                                <img src="/src/components/assets/bruchetta.svg" alt="" />
                             </div>
                             <h3>Johan Johahnson</h3>
                         </div>
@@ -27,7 +27,7 @@ function Testimonials() {
                         </b>
                         <div class="testi-inner">
                             <div class="testi-img-div">  
-                                <img src="/src/components/assets/bruchetta.svg" />
+                                <img src="/src/components/assets/bruchetta.svg" alt="" />
                             </div>
                             <h3>Johan Johahnson</h3>
                         </div>
@@ -42,7 +42,7 @@ function Testimonials() {
                         </b>
                         <div class="testi-inner">
                             <div class="testi-img-div">  
-                                <img src="/src/components/assets/bruchetta.svg" />
+                                <img src="/src/components/assets/bruchetta.svg" alt="" />
                             </div>
                             <h3>Johan Johahnson</h3>
                         </div>
@@ -57,7 +57,7 @@ function Testimonials() {
                         </b>
                         <div class="testi-inner">
                             <div class="testi-img-div">  
-                                <img src="/src/components/assets/bruchetta.svg" />
+                                <img src="/src/components/assets/bruchetta.svg" alt="" />
                             </div>
                             <h3>Johan Johahnson</h3>
                         </div>

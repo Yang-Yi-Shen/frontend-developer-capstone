@@ -1,6 +1,6 @@
 function Hero() {
     return (
-        <section id="hero" class="green">
+        <section id="hero" className="green">
                 <div>
                     <h1>Little Lemon</h1>
                     <h3>Chicago</h3>
@@ -10,7 +10,7 @@ function Hero() {
                     </button>
                 </div>
                 <div id="hero-img">
-                    <img src="/src/components/assets/restauranfood.jpg" />
+                    <img src="/src/components/assets/restauranfood.jpg" alt="" />
                 </div>
             </section>
     )
