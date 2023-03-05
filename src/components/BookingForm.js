@@ -5,17 +5,10 @@ function BookingForm(props) {
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
-//   const [availableTimes, setAvailableTimes] = useState([
-//     "17:00",
-//     "18:00",
-//     "19:00",
-//     "20:00",
-//     "21:00",
-//     "22:00",
-//   ]);
 
   function handleDateChange(event) {
     setDate(event.target.value);
+    props.dispatch({ type: "UPDATE_TIMES", date: event.target.value });
   }
 
   function handleTimeChange(event) {
@@ -37,6 +30,7 @@ function BookingForm(props) {
 
   return (
     <form id="booking-form" onSubmit={handleSubmit}>
+      <h1 className="markazi">Booking Form</h1>
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
@@ -47,7 +41,9 @@ function BookingForm(props) {
       <label htmlFor="res-time">Choose time</label>
       <select id="res-time" value={time} onChange={handleTimeChange}>
         {props.availableTimes.map((time) => (
-          <option key={time}>{time}</option>
+          <option key={time.time} value={time.time} disabled={!time.available}>
+            {time.time}
+          </option>
         ))}
       </select>
       <label htmlFor="guests">Number of guests</label>
