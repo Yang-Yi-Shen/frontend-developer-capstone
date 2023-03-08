@@ -52,7 +52,7 @@ const seededRandom = function (seed) {
 
 const fetchAPI = function(date) {
     let result = [];
-    let random = seededRandom(date.getDate());
+    let random = seededRandom(new Date()); //why won't date.getDate() work???
 
     for(let i = 17; i <= 23; i++) {
         if(random() < 0.5) {
@@ -62,6 +62,7 @@ const fetchAPI = function(date) {
             result.push(i + ':30');
         }
     }
+
     return result;
 };
 // const submitAPI = function(formData) {
@@ -69,22 +70,20 @@ const fetchAPI = function(date) {
 // };
 //end of coursera code
 
-export function initializeTimes() {
-    const times = fetchAPI(new Date())
+export function initializeTimes(date) {
+    const times = fetchAPI(date)
     
     const result = times.map((time) => ({
         time: time,
         available: true
     }));
-
-    console.log(result)
     return result;
 }
 
 export function updateTimes(state, action) {
     switch (action.type) {
         case "UPDATE_TIMES":
-            return initializeTimes();
+            return initializeTimes(new Date());
         default:
             return state;
     }

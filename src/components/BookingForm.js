@@ -34,8 +34,8 @@ function BookingForm(props) {
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
-        value={date}
-        onChange={handleDateChange}
+        value={props.selectedDate}
+        onChange={props.handleDateChange}
         id="res-date"
       />
       <label htmlFor="res-time">Choose time</label>

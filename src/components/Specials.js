@@ -13,7 +13,7 @@ function Specials() {
                 <div>
                     <div class="title-price">
                         <h3>Greek salad</h3>
-                        <span class="price">$12.99</span>
+                        <span className="price">$12.99</span>
                     </div>
                     <p>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.</p>
                     <b>Order a delivery <i class="fas fa-motorcycle"></i></b>
@@ -24,7 +24,7 @@ function Specials() {
                 <div>
                     <div class="title-price">
                         <h3>Greek salad</h3>
-                        <span class="price">$12.99</span>
+                        <span className="price">$12.99</span>
                     </div>
                     <p>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.</p>
                     <b>Order a delivery <i class="fas fa-motorcycle"></i></b>
@@ -35,7 +35,7 @@ function Specials() {
                 <div>
                     <div class="title-price">
                         <h3>Greek salad</h3>
-                        <span class="price">$12.99</span>
+                        <span className="price">$12.99</span>
                     </div>
                     <p>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.</p>
                     <b>Order a delivery <i class="fas fa-motorcycle"></i></b>
