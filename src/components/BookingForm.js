@@ -25,7 +25,7 @@ function BookingForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // do something with the form data
+    props.submitForm([date, time, guests, occasion]);
   }
 
   return (
@@ -39,13 +39,24 @@ function BookingForm(props) {
         id="res-date"
       />
       <label htmlFor="res-time">Choose time</label>
-      <select id="res-time" value={time} onChange={handleTimeChange}>
+      {/* <select id="res-time" value={time} onChange={handleTimeChange}>
         {props.availableTimes.map((time) => (
           <option key={time.time} value={time.time} disabled={!time.available}>
             {time.time}
           </option>
         ))}
-      </select>
+      </select> */}
+      <table>
+        <tbody>
+          <tr key={time.time}>
+            {props.availableTimes.map(time => (
+                <td key={time.time} >
+                  {time.time}
+                </td>
+            ))}
+          </tr>
+        </tbody>
+      </table>
       <label htmlFor="guests">Number of guests</label>
       <input
         type="number"

@@ -2,9 +2,10 @@
 
 import { useState, useReducer } from 'react'
 
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 
 import BookingForm from './BookingForm';
+import ConfirmedBooking from './ConfirmedBooking';
 import Hero from './Hero'
 import Specials from './Specials'
 import Testimonials from './Testimonials'
@@ -16,6 +17,16 @@ export default function Main() {
     function handleDateChange(event) {
         setSelectedDate(event.target.value);
         dispatch({ type: "UPDATE_TIMES", payload: event.target.value });
+    }
+
+    const navigate = useNavigate();
+
+    function submitForm(formData) {
+        const confirmation = submitAPI(formData);
+
+        if (confirmation) {
+            navigate('/confirmation')
+        }
     }
 
     return (
@@ -33,7 +44,11 @@ export default function Main() {
                         selectedDate={selectedDate}
                         availableTimes={availableTimes}
                         handleDateChange={handleDateChange}
+                        submitForm={submitForm}
                     />
+                } />
+                <Route path='/confirmation' element={
+                    <ConfirmedBooking />
                 } />
             </Routes>
         </div>
@@ -65,9 +80,10 @@ const fetchAPI = function(date) {
 
     return result;
 };
-// const submitAPI = function(formData) {
-//     return true;
-// };
+
+const submitAPI = function(formData) {
+    return true;
+};
 //end of coursera code
 
 export function initializeTimes(date) {
@@ -83,7 +99,7 @@ export function initializeTimes(date) {
 export function updateTimes(state, action) {
     switch (action.type) {
         case "UPDATE_TIMES":
-            return initializeTimes(new Date());
+            return initializeTimes(action.payload);
         default:
             return state;
     }
