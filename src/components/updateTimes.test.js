@@ -1,5 +1,7 @@
 import { updateTimes } from './Main';
 
+// POSSIBLY IMPORTANT: Update this test later, it is outdated
+
 describe('availableTimes', () => {
   it('returns the same value that is provided in the state', () => {
     const initialState = [
