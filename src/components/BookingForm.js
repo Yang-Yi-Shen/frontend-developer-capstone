@@ -30,7 +30,7 @@ function BookingForm(props) {
 
   return (
     <form id="booking-form" onSubmit={handleSubmit}>
-      <h1 className="markazi">Booking Form</h1>
+      <h1 className="markazi subtitle">Booking Form</h1>
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
@@ -39,13 +39,6 @@ function BookingForm(props) {
         id="res-date"
       />
       <label htmlFor="res-time">Choose time</label>
-      {/* <select id="res-time" value={time} onChange={handleTimeChange}>
-        {props.availableTimes.map((time) => (
-          <option key={time.time} value={time.time} disabled={!time.available}>
-            {time.time}
-          </option>
-        ))}
-      </select> */}
       <table>
         <tbody>
           <tr key={time.time}>
