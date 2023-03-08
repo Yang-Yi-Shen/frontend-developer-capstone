@@ -291,6 +291,10 @@ footer * {
     gap: 20px;
 }
 
+td {
+    border: 1px solid;
+}
+
 @media screen and (min-width: 1330px) {
     #about {
         padding: 100px 300px;
