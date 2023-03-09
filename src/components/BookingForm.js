@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useFormik } from 'formik'
 
 function BookingForm(props) {
   // state moved up to Main.js

@@ -1,5 +1,7 @@
 //IMPORTANT: think HARD about how availableTimes (line 12), updateTimes (line 44), initializeTimes (line 33) and useReducer fit together
 
+//API endpoint: https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js
+
 import { useState, useReducer } from 'react'
 
 import { Routes, Route, useNavigate } from 'react-router-dom'
@@ -55,7 +57,7 @@ export default function Main() {
     );
 }
 
-//code from coursera
+//code from coursera (NOTE: get this code through APIs later)
 const seededRandom = function (seed) {
     var m = 2**35 - 31;
     var a = 185852;
