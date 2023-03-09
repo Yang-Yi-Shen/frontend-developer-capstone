@@ -36,9 +36,13 @@ function BookingForm(props) {
     props.submitForm([props.selectedDate, time, guests, occasion]);
     console.log(props.selectedDate, time, guests, occasion)
   }
-  
+
   return (
-    <form id="booking-form" onSubmit={handleSubmit}>
+    <form 
+      id="booking-form" 
+      onSubmit={handleSubmit}
+      aria-label="booking form"
+    >
       <h1 className="markazi subtitle">Booking Form</h1>
       <label htmlFor="res-date">Choose date</label>
       <input
@@ -46,6 +50,7 @@ function BookingForm(props) {
         value={props.selectedDate}
         onChange={props.handleDateChange}
         id="res-date"
+        aria-label="date of appointment"
         required
       />
       <label htmlFor="res-time">Choose time</label>
@@ -63,6 +68,7 @@ function BookingForm(props) {
       <select 
         value={time}
         onChange={handleTimeChange}
+        aria-label="time of appointment"
         required>
           {props.availableTimes.map(time => (
             <option key={time.time} value={time.time}>
@@ -79,14 +85,15 @@ function BookingForm(props) {
         id="guests"
         value={guests}
         onChange={handleGuestsChange}
+        aria-label="number of guests"
         required
       />
       <label htmlFor="occasion">Occasion</label>
-      <select id="occasion" value={occasion} onChange={handleOccasionChange} required>
+      <select id="occasion" value={occasion} onChange={handleOccasionChange} aria-label="occasion" required>
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
-      <input type="submit" value="Make Your reservation" disabled={!isFormValid} />
+      <input type="submit" value="Make Your reservation" disabled={!isFormValid} aria-label="submit form" />
     </form>
   );
 }
