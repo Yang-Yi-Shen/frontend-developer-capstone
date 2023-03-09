@@ -1,22 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useFormik } from 'formik'
 
 function BookingForm(props) {
-  const [date, setDate] = useState("");
+  // state moved up to Main.js
+  // const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
+  const [isFormValid, setIsFormValid] = useState(false)
 
-  function handleDateChange(event) {
-    setDate(event.target.value);
-    props.dispatch({ type: "UPDATE_TIMES", date: event.target.value });
-  }
+  useEffect(() => {
+    setIsFormValid(props.selectedDate !== "" && time !== "");
+  }, [props.selectedDate, time])
+
+  // state moved up to Main.js
+  // function handleDateChange(event) {
+  //   setDate(event.target.value);
+  //   props.dispatch({ type: "UPDATE_TIMES", date: event.target.value });
+  // }
 
   function handleTimeChange(event) {
     setTime(event.target.value);
   }
 
   function handleGuestsChange(event) {
-    setGuests(parseInt(event.target.value));
+    setGuests(event.target.value);
   }
 
   function handleOccasionChange(event) {
@@ -25,9 +33,10 @@ function BookingForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.submitForm([date, time, guests, occasion]);
+    props.submitForm([props.selectedDate, time, guests, occasion]);
+    console.log(props.selectedDate, time, guests, occasion)
   }
-
+  
   return (
     <form id="booking-form" onSubmit={handleSubmit}>
       <h1 className="markazi subtitle">Booking Form</h1>
@@ -37,9 +46,10 @@ function BookingForm(props) {
         value={props.selectedDate}
         onChange={props.handleDateChange}
         id="res-date"
+        required
       />
       <label htmlFor="res-time">Choose time</label>
-      <table>
+      {/* <table>
         <tbody>
           <tr key={time.time}>
             {props.availableTimes.map(time => (
@@ -49,7 +59,17 @@ function BookingForm(props) {
             ))}
           </tr>
         </tbody>
-      </table>
+      </table> */}
+      <select 
+        value={time}
+        onChange={handleTimeChange}
+        required>
+          {props.availableTimes.map(time => (
+            <option key={time.time} value={time.time}>
+              {time.time}
+            </option>
+          ))}
+      </select>
       <label htmlFor="guests">Number of guests</label>
       <input
         type="number"
@@ -59,13 +79,14 @@ function BookingForm(props) {
         id="guests"
         value={guests}
         onChange={handleGuestsChange}
+        required
       />
       <label htmlFor="occasion">Occasion</label>
-      <select id="occasion" value={occasion} onChange={handleOccasionChange}>
+      <select id="occasion" value={occasion} onChange={handleOccasionChange} required>
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
-      <input type="submit" value="Make Your reservation" />
+      <input type="submit" value="Make Your reservation" disabled={!isFormValid} />
     </form>
   );
 }
