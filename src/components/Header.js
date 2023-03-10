@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 function Header() {
   return(
       <header>
-            <img id="logo" src="./assets/Logo.svg" alt="" />
+            <img id="logo" src="assets/Logo.svg" alt="" />
             <ul id="navbar">
                 <li>
                     <Link to='/'>Home</Link>
