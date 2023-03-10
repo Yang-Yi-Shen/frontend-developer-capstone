@@ -35,7 +35,7 @@ function BookingForm(props) {
       onSubmit={handleSubmit}
       aria-label="booking form"
     >
-      <h1 className="markazi subtitle">Booking Form</h1>
+      <h1 id="booking-form-title" className="markazi subtitle">Booking Form</h1>
       <div id="booking-form-inner">
         <label htmlFor="res-date">Choose date</label>
         <input

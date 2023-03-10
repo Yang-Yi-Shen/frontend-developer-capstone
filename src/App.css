@@ -286,8 +286,13 @@ footer * {
 
 /*booking form css*/
 #booking-form {
-    padding: 0px 0px 50px;
+    padding: 50px 0px 50px;
     text-align: center;
+    background-color: #EDEFEE;
+}
+
+#booking-form-title {
+    margin: 0px 0px 25px;
 }
 
 #booking-form-inner {
