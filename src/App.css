@@ -340,6 +340,11 @@ footer * {
     font-weight: 500;
 }
 
+#booking-form-inner input[type='submit']:disabled {
+    /* background-color: #999999 */
+    opacity: 50%;
+}
+
 @media screen and (min-width: 1330px) {
     #about {
         padding: 100px 300px;
