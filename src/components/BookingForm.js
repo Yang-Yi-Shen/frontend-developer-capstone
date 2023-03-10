@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 function BookingForm(props) {
-  // state moved up to Main.js
-  // const [date, setDate] = useState("");
+  
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
@@ -11,12 +10,6 @@ function BookingForm(props) {
   useEffect(() => {
     setIsFormValid(props.selectedDate !== "" && time !== "");
   }, [props.selectedDate, time])
-
-  // state moved up to Main.js
-  // function handleDateChange(event) {
-  //   setDate(event.target.value);
-  //   props.dispatch({ type: "UPDATE_TIMES", date: event.target.value });
-  // }
 
   function handleTimeChange(event) {
     setTime(event.target.value);
